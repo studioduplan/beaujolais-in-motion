@@ -1,0 +1,19 @@
+.faq {
+  @apply py-8 lg:py-16 overflow-hidden;
+
+  > .container {
+    @apply flex flex-col gap-y-8;
+  }
+
+  &__head {
+    @apply flex flex-col sm:flex-row justify-between sm:items-center gap-y-6 sm:gap-y-0 lg:gap-x-48;
+
+    &-on-title {
+      @apply uppercase text-lg;
+    }
+
+    &-button {
+      @apply whitespace-nowrap;
+    }
+  }
+}

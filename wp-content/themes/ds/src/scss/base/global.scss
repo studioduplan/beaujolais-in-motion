@@ -1,0 +1,21 @@
+body {
+  @apply antialiased font-montserrat;
+
+  &.open-menu {
+    @apply fixed w-full overflow-hidden;
+  }
+}
+
+.container {
+  @apply mx-auto px-4 sm:px-8 laptop:px-0;
+}
+
+.object-fit-cover,
+.attachment-object-fit-cover {
+  @apply w-full h-full object-cover;
+}
+
+.object-fit-contain,
+.attachment-object-fit-cover {
+  @apply w-full h-auto object-contain;
+}

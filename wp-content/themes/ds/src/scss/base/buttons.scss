@@ -1,0 +1,25 @@
+.cta {
+  @apply relative inline-flex items-center gap-x-2 overflow-hidden z-0 text-black inner-border-2 inner-border-black bg-black rounded-full px-4 py-2 md:px-5 md:py-3 font-medium uppercase text-base lg:text-lg transition-colors duration-300 hover:text-white after:absolute after:top-0 after:start-0 after:rounded-e-full after:bg-black after:-z-10 after:w-full after:h-full after:transition-transform after:duration-300 after:ease-in-sine after:-scale-x-0 after:origin-left after:hover:scale-100;
+
+  &:hover {
+    > .icon path {
+      @apply fill-white;
+    }
+  }
+
+  > .icon {
+    @apply -mt-1;
+
+    path {
+      @apply transition-colors duration-300;
+    }
+  }
+
+  &-border {
+    @apply bg-transparent text-white;
+  }
+
+  &-black {
+    @apply bg-black text-white;
+  }
+}

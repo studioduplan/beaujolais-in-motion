@@ -1,0 +1,46 @@
+.template-single-post {
+  @apply pt-8 pb-16 lg:py-16;
+
+  > .container {
+    @apply flex flex-col lg:flex-row items-start gap-y-8 lg:gap-y-0 lg:gap-x-16;
+  }
+
+  &__left {
+    @apply lg:sticky top-4 w-[300px] flex-shrink-0;
+  }
+
+  &__right,
+  &__sections,
+  &__summary {
+    @apply flex flex-col gap-y-8;
+  }
+
+  &__intro {
+    @apply flex flex-col gap-y-8;
+  }
+
+  &__section {
+    .wp-caption {
+      @apply relative mb-8 rounded-2xl sm:rounded-4xl overflow-hidden;
+      width: 100% !important;
+
+      .wp-caption-text {
+        @apply absolute bottom-0 start-0 mb-6 ms-6 inline-flex rounded-4xl overflow-hidden font-medium text-sm mt-3 text-white italic bg-black py-2 px-3;
+      }
+    }
+  }
+
+  &__summary {
+    &-title {
+      @apply font-montserrat uppercase text-lg sm:text-xl;
+    }
+
+    &-items {
+      @apply flex flex-col list-decimal ps-5;
+    }
+
+    &-item-link {
+      @apply text-sm underline underline-offset-2 transition-colors duration-300 hover:text-black;
+    }
+  }
+}

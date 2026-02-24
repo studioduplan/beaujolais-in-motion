@@ -1,0 +1,20 @@
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
+@use "scss/base/global";
+@use "scss/base/animations";
+//@use "scss/base/buttons";
+//@use "scss/base/texts";
+//@use "scss/base/forms";
+
+@use "scss/layouts/header";
+@use "scss/layouts/footer";
+
+//@use "scss/components/faq";
+//@use "scss/components/accordions";
+//@use "scss/components/tabs";
+
+@use "scss/pages/homepage";
+
+//@use "scss/singles/single-post";

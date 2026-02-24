@@ -1,0 +1,35 @@
+.style {
+  &-title {
+    @apply font-montserrat text-2xl lg:text-5xl laptop:text-title;
+    line-height: 1.25 !important;
+
+    strong {
+      @apply text-black font-normal;
+    }
+  }
+
+  &-rich-text {
+    @apply flex flex-col gap-y-6;
+
+    h2,
+    h3 {
+      @apply font-montserrat leading-relaxed;
+    }
+
+    h2 {
+      @apply text-2xl;
+    }
+
+    h3 {
+      @apply text-lg text-black;
+    }
+
+    a {
+      @apply font-medium text-black underline underline-offset-2 transition-colors duration-300 hover:text-black;
+    }
+
+    ul {
+      @apply list-disc ps-4;
+    }
+  }
+}

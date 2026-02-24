@@ -1,0 +1,56 @@
+html.lenis,
+html.lenis body {
+  @apply h-auto;
+}
+
+.lenis.lenis-smooth {
+  @apply scroll-auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  @apply overscroll-contain;
+}
+
+.lenis.lenis-stopped {
+  @apply overflow-hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  @apply pointer-events-none;
+}
+
+.reveal-text {
+  @apply opacity-0;
+}
+
+.split-line {
+  @apply overflow-hidden;
+}
+
+.marquee[data-animated="true"] .marquee__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.marquee[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+/* Hide scrollbar in Chrome, Safari, and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar in IE, Edge, and Firefox */
+.no-scrollbar {
+  -ms-scrollbar-width: none;
+  scrollbar-width: none; /* Firefox */
+}

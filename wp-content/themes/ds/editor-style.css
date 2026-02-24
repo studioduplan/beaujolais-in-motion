@@ -1,0 +1,8 @@
+.block-editor-tabbed-sidebar__tab[aria-controls*="tabs-1-patterns-view"],
+.block-editor-tabbed-sidebar__tab[aria-controls*="tabs-1-media-view"] {
+  display: none !important;
+}
+
+.block-editor-tabbed-sidebar__tablist {
+    mask-image: none !important;
+}
