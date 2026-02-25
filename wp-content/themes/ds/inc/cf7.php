@@ -33,3 +33,29 @@ if (! function_exists('orlo_button_handler')) {
 		return $html;
 	}
 }
+
+add_filter('wpcf7_special_mail_tags', function ($output, $name, $html) {
+
+    $submission = WPCF7_Submission::get_instance();
+    if (!$submission) return $output;
+
+    $posted = $submission->get_posted_data();
+    $event_id = isset($posted['event']) ? intval($posted['event']) : 0;
+    if (!$event_id) return $output;
+
+    // Tag titre event
+    if ($name === 'event_title') {
+        return get_the_title($event_id);
+    }
+
+	if ($name === 'event_date') {
+        return get_field("date", $event_id);
+    }
+
+	if ($name === 'event_place') {
+        return get_field("place", $event_id);
+    }
+
+    return $output;
+
+}, 10, 3);

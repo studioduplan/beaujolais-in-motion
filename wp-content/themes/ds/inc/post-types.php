@@ -7,7 +7,6 @@
 ----------------------------------------------------------------------------------------------------*/
 
 add_action('init', function () {
-    // Example - Testimonials
     // Don't forget to create single-<post_type>.php and archive-<post_type>.php
     register_post_type(
         'events',
@@ -20,7 +19,7 @@ add_action('init', function () {
             'public' => true,
             'has_archive' => false,
             'rewrite' => array('slug' => 'events'),
-            'supports' => array('title', 'thumbnail')
+            'supports' => array('title')
         )
     );
 

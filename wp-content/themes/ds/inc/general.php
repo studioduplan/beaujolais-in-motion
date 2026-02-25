@@ -73,3 +73,19 @@ function currentYear($atts)
     return date('Y');
 }
 add_shortcode('year', 'currentYear');
+
+function wp_ds_get_page($page_template_filename){
+    
+    $pages = get_pages( array(
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $page_template_filename
+    ) );
+
+    $url = null;
+    
+    if(isset($pages[0])) {
+        $url = $pages[0]->guid;
+    }
+    
+    return esc_url( $url );
+}

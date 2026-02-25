@@ -1,3 +1,55 @@
 /*** Header ***/
 .site-header {
+  @apply fixed top-0 left-0 w-full z-50 py-8 flex justify-end;
+
+  .page-template-registration & {
+    @apply bg-primary/90 backdrop-blur-sm;
+
+    nav.menu-navigation-container #menu-navigation .menu-item a {
+      @apply text-white;
+    }
+  }
+
+  &.is-sticky {
+    @apply bg-primary/90 backdrop-blur-sm;
+
+    nav.menu-navigation-container #menu-navigation .menu-item a {
+      @apply text-white;
+    }
+  }
+
+  &__nav {
+    @apply flex justify-center lg:justify-between items-center;
+
+    .home &,
+    .page-template-registration & {
+      @apply block;
+    }
+
+    &-left {
+      @apply hidden lg:block;
+    }
+  }
+
+  nav.menu-navigation-container {
+    @apply flex justify-center sm:justify-end;
+
+    #menu-navigation {
+      .menu-item a {
+        @apply text-xl uppercase hover:font-bold;
+
+        .single-events & {
+          @apply text-white;
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  @apply text-white;
+
+  a {
+    @apply duration-300 hover:text-secondary;
+  }
 }

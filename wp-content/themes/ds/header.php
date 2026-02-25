@@ -28,11 +28,13 @@
         <header class="site-header">
             <div class="container">
                 <div class="site-header__nav">
-                    <div class="site-header__nav-left">
-                        <a href="<?= get_site_url() ?>" class="site-header__logo">
-                            <img src="<?php echo get_template_directory_uri() ?>/images/logo.svg" width="300" height="45" alt="logo-duplan-studio" fetchpriority="high" />
-                        </a>
-                    </div>
+                    <?php if(is_singular("events")) : ?>
+                        <div class="site-header__nav-left">
+                            <div class="breadcrumb">
+                                <a href="<?php echo home_url(); ?>">Beaujolais in Motion</a> > <span>Event: <?php the_title(); ?></span>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                     <div class="site-header__nav-right">
                         <?php
                         wp_nav_menu(
@@ -41,7 +43,7 @@
                                 'menu_id' => 'menu-navigation',
                                 'menu_class'      => 'flex items-center',
                                 'theme_location'  => 'main-menu',
-                                'li_class'        => 'ps-4 lg:ps-6'
+                                'li_class'        => 'px-6 lg:ps-16'
                             )
                         );
                         ?>
@@ -49,8 +51,6 @@
                         ?>
                     </div>
                 </div>
-                <?php //get_template_part("template-parts/hero"); 
-                ?>
             </div>
         </header>
 

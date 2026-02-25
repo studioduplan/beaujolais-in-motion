@@ -1,5 +1,5 @@
 body {
-  @apply antialiased font-montserrat;
+  @apply antialiased font-montserrat text-primary leading-6;
 
   &.open-menu {
     @apply fixed w-full overflow-hidden;
@@ -8,6 +8,14 @@ body {
 
 .container {
   @apply mx-auto px-4 sm:px-8 laptop:px-0;
+
+  &-small {
+    @apply container max-w-[1186px];
+  }
+}
+
+.site-content {
+  @apply overflow-x-hidden;
 }
 
 .object-fit-cover,
