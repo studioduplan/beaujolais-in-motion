@@ -4,6 +4,10 @@
 
     > .container {
       @apply h-full flex items-center justify-center;
+
+      > .svg-icon {
+        @apply relative z-0;
+      }
     }
 
     &-intro {
