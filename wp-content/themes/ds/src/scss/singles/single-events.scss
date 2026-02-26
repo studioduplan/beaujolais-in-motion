@@ -68,7 +68,11 @@
   }
 
   &__cream-items {
-    @apply bg-cream py-6 lg:py-20;
+    @apply relative bg-cream py-6 lg:py-20;
+
+    .anim-deco-wave {
+      @apply absolute -z-0 top-4 -right-80 w-[445px] h-auto;
+    }
 
     > .container {
       @apply flex flex-col items-start gap-y-12;
