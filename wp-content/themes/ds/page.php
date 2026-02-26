@@ -13,7 +13,7 @@ $last_event = get_field("last_event", $post_id);
             <div class="template-pages__hero">
                 <img class="template-pages__hero-bg" src="<?php echo $hero["bg"]['url'] ?>" alt="<?php echo $hero["bg"]['alt'] ?>" width="<?php echo $hero["bg"]['width'] ?>" height="<?php echo $hero["bg"]['height'] ?>" />
                 <div class="container">    
-                    <img class="template-pages__hero-logo" src="<?php echo $hero["logo"]['url'] ?>" alt="<?php echo $hero["logo"]['alt'] ?>" width="<?php echo $hero["logo"]['width'] ?>" height="<?php echo $hero["logo"]['height'] ?>" />
+                    <img class="template-pages__hero-logo svg-icon" src="<?php echo $hero["logo"]['url'] ?>" alt="<?php echo $hero["logo"]['alt'] ?>" width="<?php echo $hero["logo"]['width'] ?>" height="<?php echo $hero["logo"]['height'] ?>" />
                     <?php if($hero["intro"]) : 
                         $on_title = $hero["intro"]["on_title"];
                         $title = $hero["intro"]["title"];
