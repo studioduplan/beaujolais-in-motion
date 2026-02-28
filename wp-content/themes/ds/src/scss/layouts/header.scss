@@ -5,7 +5,7 @@
   .page-template-registration & {
     @apply bg-primary/90 backdrop-blur-sm;
 
-    .site-header__nav-left,
+    .breadcrumb,
     nav.menu-navigation-container #menu-navigation .menu-item a {
       @apply text-white;
     }
@@ -14,6 +14,7 @@
   &.is-sticky {
     @apply bg-primary/90 backdrop-blur-sm;
 
+    .breadcrumb,
     nav.menu-navigation-container #menu-navigation .menu-item a {
       @apply text-white;
     }
@@ -23,7 +24,7 @@
     @apply flex justify-center lg:justify-between items-center;
 
     &-left {
-      @apply hidden lg:block text-primary;
+      @apply hidden lg:block;
     }
   }
 
@@ -43,7 +44,7 @@
 }
 
 .breadcrumb {
-  @apply text-white;
+  @apply text-primary;
 
   a {
     @apply duration-300 hover:text-secondary;
