@@ -5,6 +5,7 @@
   .page-template-registration & {
     @apply bg-primary/90 backdrop-blur-sm;
 
+    .site-header__nav-left,
     nav.menu-navigation-container #menu-navigation .menu-item a {
       @apply text-white;
     }
@@ -22,7 +23,7 @@
     @apply flex justify-center lg:justify-between items-center;
 
     &-left {
-      @apply hidden lg:block;
+      @apply hidden lg:block text-primary;
     }
   }
 
