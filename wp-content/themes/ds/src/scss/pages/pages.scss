@@ -1,0 +1,9 @@
+.template-pages {
+  &__content {
+    @apply pt-32 pb-20;
+  }
+
+  &__title {
+    @apply block mb-12;
+  }
+}

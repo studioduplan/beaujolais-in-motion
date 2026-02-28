@@ -5,13 +5,14 @@
 @use "scss/base/global";
 @use "scss/base/animations";
 @use "scss/base/buttons";
-//@use "scss/base/texts";
+@use "scss/base/texts";
 @use "scss/base/forms";
 
 @use "scss/layouts/header";
 @use "scss/layouts/footer";
 
 @use "scss/pages/homepage";
+@use "scss/pages/pages";
 @use "scss/pages/registration";
 
 @use "scss/singles/single-events";

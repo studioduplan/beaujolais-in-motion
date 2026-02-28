@@ -2,7 +2,7 @@
   @apply pt-32 pb-20;
 
   &__title {
-    @apply block text-3xl lg:text-[80px] lg:leading-[95px] font-bold text-center mb-12;
+    @apply block mb-12;
   }
 
   &__form-wrapper {
@@ -26,8 +26,12 @@
       @apply text-3xl font-bold mb-5;
     }
 
+    &-thumbnails {
+      @apply flex-shrink-0;
+    }
+
     &-thumbnail-image {
-      @apply w-full lg:w-[425px] h-auto lg:h-[410px] flex-shrink-0 object-contain;
+      @apply w-full lg:w-[425px] h-auto max-h-[425px] lg:h-[425px] object-cover;
     }
 
     &-content {

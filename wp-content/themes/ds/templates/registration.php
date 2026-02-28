@@ -16,7 +16,7 @@ if (isset($_GET['event'])) {
 
 <div class="template-registration">
   <div class="container-small">
-    <h1 class="template-registration__title anim-title">Registration</h1>
+    <h1 class="template-registration__title style-title anim-title">Registration</h1>
     <div class="template-registration__event-item">
       <div class="template-registration__event-item-col">
 <?php if($thumbnail_images[0]["image"]) : ?>

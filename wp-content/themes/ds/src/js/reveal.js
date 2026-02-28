@@ -25,13 +25,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         reveal.anim = gsap.from(reveal.split.chars, {
           scrollTrigger: {
             trigger: reveal,
-            toggleActions: "restart pause resume reverse",
-            start: "top 50%",
+            // fire the animation only once
+            toggleActions: "play none none none",
+            start: "top 80%",
+            once: true,
           },
-          duration: 0.7,
+          duration: 0.5,
           ease: "circ.out",
           y: 100,
-          stagger: 0.02,
+          stagger: 0.01,
         });
         gsap.set(reveal, { opacity: 1 });
       });

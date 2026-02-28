@@ -172,7 +172,7 @@ $more_event = get_posts($args);
                                                 <img class="svg-icon" src="<?php echo get_template_directory_uri() ?>/images/cal.svg" alt="icon-cal" width="31" height="31" />Date: <?= $date ?>
                                             </div>
                                         <div class="template-single-event__more-event-item-buttons">
-                                                    <a class="template-single-event__more-event-item-link cta cta-dotted" href="<?= $link ?>">More infos</a>
+                                                    <a class="template-single-event__more-event-item-link cta cta-dotted" href="<?= $link ?>">More info</a>
                                                 </div>
                                         </div>
                                         <div class="template-single-event__more-event-item-col">

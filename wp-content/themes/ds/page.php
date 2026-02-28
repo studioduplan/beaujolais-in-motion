@@ -8,6 +8,8 @@ $last_event = get_field("last_event", $post_id);
 ?>
 
 <div class="template-pages">
+
+<?php if(is_front_page()) : ?>
    
         <?php if($hero) : ?>
             <div class="template-pages__hero">
@@ -80,7 +82,7 @@ $last_event = get_field("last_event", $post_id);
                                                     <img src="<?php echo get_template_directory_uri() ?>/images/cal.svg" alt="icon-cal" width="31" height="31" />Date: <?= $date ?>
                                                 </div>
                                                 <div class="template-pages__blue-block-item-buttons">
-                                                    <a class="template-pages__blue-block-item-link cta cta-dotted" href="<?= $link ?>">More infos</a>
+                                                    <a class="template-pages__blue-block-item-link cta cta-dotted" href="<?= $link ?>">More info</a>
                                                     <a class="template-pages__blue-block-item-form-registration-link cta" href="<?= $form_registration_link ?>">Register</a>
                                                 </div>
                                             </div>
@@ -141,7 +143,7 @@ $last_event = get_field("last_event", $post_id);
                                                 <img class="svg-icon" src="<?php echo get_template_directory_uri() ?>/images/cal.svg" alt="icon-cal" width="31" height="31" />Date: <?= $date ?>
                                             </div>
                                         <div class="template-pages__last-event-item-buttons">
-                                                    <a class="template-pages__last-event-item-link cta cta-dotted" href="<?= $link ?>">More infos</a>
+                                                    <a class="template-pages__last-event-item-link cta cta-dotted" href="<?= $link ?>">More info</a>
                                                     <a class="template-pages__last-event-item-form-registration-link cta" href="<?= $form_registration_link ?>">Register</a>
                                                 </div>
                                         </div>
@@ -166,6 +168,17 @@ $last_event = get_field("last_event", $post_id);
            </div>
 
 </div>
+
+<?php else : ?>
+    <div class="template-pages__content">
+        <div class="container">
+            <h1 class="template-pages__title style-title anim-title"><?= get_the_title() ?></h1>
+            <div class="template-pages__text style-rich-text">
+                <?php the_content() ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 
 <?php
 get_template_part("template-parts/pre-footer");

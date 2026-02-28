@@ -21,11 +21,6 @@
   &__nav {
     @apply flex justify-center lg:justify-between items-center;
 
-    .home &,
-    .page-template-registration & {
-      @apply block;
-    }
-
     &-left {
       @apply hidden lg:block;
     }

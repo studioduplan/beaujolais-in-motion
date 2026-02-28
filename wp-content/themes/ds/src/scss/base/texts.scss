@@ -1,11 +1,6 @@
 .style {
   &-title {
-    @apply font-montserrat text-2xl lg:text-5xl laptop:text-title;
-    line-height: 1.25 !important;
-
-    strong {
-      @apply text-black font-normal;
-    }
+    @apply text-3xl lg:text-[80px] lg:leading-[95px] font-bold text-center;
   }
 
   &-rich-text {

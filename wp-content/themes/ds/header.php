@@ -28,13 +28,16 @@
         <header class="site-header">
             <div class="container">
                 <div class="site-header__nav">
-                    <?php if(is_singular("events")) : ?>
                         <div class="site-header__nav-left">
                             <div class="breadcrumb">
-                                <a href="<?php echo home_url(); ?>">Beaujolais in Motion</a> > <span>Event: <?php the_title(); ?></span>
+                                 <?php if(is_singular("events")) : ?>
+                                    <a href="<?php echo home_url(); ?>">Beaujolais in Motion</a> > <span>Event: <?php the_title(); ?></span>
+                                <?php else : ?>
+                                    <a href="<?php echo home_url(); ?>">Beaujolais in Motion</a> > <span><?php the_title(); ?></span>
+                                 <?php endif; ?>
                             </div>
                         </div>
-                    <?php endif; ?>
+                   
                     <div class="site-header__nav-right">
                         <?php
                         wp_nav_menu(
