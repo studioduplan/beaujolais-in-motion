@@ -59,3 +59,11 @@ add_filter('wpcf7_special_mail_tags', function ($output, $name, $html) {
     return $output;
 
 }, 10, 3);
+
+add_filter( 'wpcf7_mail_components', 'mycustom_wpcf7_mail_components' );
+
+function mycustom_wpcf7_mail_components( $components ) {
+    $components['attachments'][] = get_template_directory_uri().'/pdf/email.pdf';
+
+    return $components;
+}
