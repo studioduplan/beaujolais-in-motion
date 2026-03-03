@@ -37,7 +37,7 @@ if (isset($_GET['event'])) {
     </div>
     <div class="template-registration__form-wrapper">
       <div class="container-small">
-        <?php echo do_shortcode('[contact-form-7 id="6145ded" title="Registration"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="6145ded" title="Registration" whitepaper=uploads/email.pdf]'); ?>
       </div>
     </div>
   </div>
