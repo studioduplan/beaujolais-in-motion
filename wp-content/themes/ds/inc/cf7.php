@@ -60,10 +60,16 @@ add_filter('wpcf7_special_mail_tags', function ($output, $name, $html) {
 
 }, 10, 3);
 
-add_filter( 'wpcf7_mail_components', 'mycustom_wpcf7_mail_components' );
+add_action('wpcf7_before_send_mail', 'wpcf7_add_attachment');
+function wpcf7_add_attachment($contact_form)
+{
+    global $_POST;
+    $submission = WPCF7_Submission::get_instance();
 
-function mycustom_wpcf7_mail_components( $components ) {
-    $components['attachments'][] = get_template_directory_uri().'/pdf/email.pdf';
+    if ($submission && !empty($_POST['whitepaper'])) {
 
-    return $components;
+        $mail = $contact_form->prop('mail');
+        $mail['attachments'] .= "\n{$_POST['whitepaper']}"; // Note the newline character here
+        $contact_form->set_properties(array('mail' => $mail));
+    }
 }
