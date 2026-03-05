@@ -28,8 +28,9 @@
         <header class="site-header">
             <div class="container">
                 <div class="site-header__nav">
-                     <?php if(!is_front_page()) : ?>
+                    
                         <div class="site-header__nav-left">
+                             <?php if(!is_front_page()) : ?>
                             <div class="breadcrumb">
                                  <?php if(is_singular("events")) : ?>
                                     <a href="<?php echo home_url(); ?>">Beaujolais in Motion</a> > <span>Event: <?php the_title(); ?></span>
@@ -37,8 +38,9 @@
                                     <a href="<?php echo home_url(); ?>">Beaujolais in Motion</a> > <span><?php the_title(); ?></span>
                                  <?php endif; ?>
                             </div>
+                             <?php endif; ?>
                         </div>
-                          <?php endif; ?>
+                         
                    
                     <div class="site-header__nav-right">
                         <?php
