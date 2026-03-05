@@ -141,7 +141,7 @@
     @apply flex flex-col-reverse lg:flex-row lg:even:flex-row-reverse items-center gap-y-6 lg:gap-y-0 lg:gap-x-16 w-full;
 
     &-images {
-      @apply gap-x-5 xl:ms-40 hidden lg:flex;
+      @apply gap-x-5 xl:ms-40 flex;
 
       &.template-single-event__white-item-images--multiple {
         @apply ms-0;
