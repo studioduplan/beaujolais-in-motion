@@ -12,7 +12,7 @@ $down_text = get_field("down_text", "option");
         <div class="site-footer__row">
             <div class="site-footer__col">
                 <?php if($logo) : ?>
-                    <a href="<?php echo home_url(); ?>" class="site-footer__logo">
+                    <a href="https://www.beaujolais.com/en/" class="site-footer__logo" target="_blank">
                         <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>" width="<?php echo $logo['width'] ?>" height="<?php echo $logo['height'] ?>" />
                     </a>
                 <?php endif; ?>
