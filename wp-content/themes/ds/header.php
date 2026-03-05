@@ -28,6 +28,7 @@
         <header class="site-header">
             <div class="container">
                 <div class="site-header__nav">
+                     <?php if(!is_front_page()) : ?>
                         <div class="site-header__nav-left">
                             <div class="breadcrumb">
                                  <?php if(is_singular("events")) : ?>
@@ -37,6 +38,7 @@
                                  <?php endif; ?>
                             </div>
                         </div>
+                          <?php endif; ?>
                    
                     <div class="site-header__nav-right">
                         <?php
