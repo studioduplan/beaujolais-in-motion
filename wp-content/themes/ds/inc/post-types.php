@@ -13,8 +13,8 @@ add_action('init', function () {
         // CPT Options
         array(
             'labels' => array(
-                'name' => 'Événements',
-                'singular_name' => 'Événement'
+                'name' => 'Events',
+                'singular_name' => 'Event'
             ),
             'public' => true,
             'has_archive' => false,
