@@ -9,7 +9,8 @@ if (isset($_GET['event'])) {
   $event_id = $_GET['event'];
   $title = get_the_title($event_id);
   $place = get_field("place", $event_id);
-  $date = get_field("date", $event_id);
+  //$date = get_field("date", $event_id);
+  $date = get_field("date_thumbnail", $event_id);
   $thumbnail_images = get_field("thumbnail_images", $event_id);
 }
 ?>

@@ -157,7 +157,8 @@ $more_event = get_posts($args);
                         $event_id = $event->ID;
                         $thumbnail_text = get_field("thumbnail_text", $event_id);
                         $place = get_field("place", $event_id);
-                        $date = get_field("date", $event_id);
+                        //$date = get_field("date", $event_id);
+                        $date = get_field("date_thumbnail", $event_id);
                         $link = get_permalink($event_id);
                         $thumbnail_images = get_field("thumbnail_images", $event_id);
                         ?>

@@ -3,13 +3,13 @@
  *
  * @package           PluginPackage
  * @author            Michael Gangolf
- * @copyright         2025 Michael Gangolf
+ * @copyright         2026 Michael Gangolf
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
  * Plugin Name: Smooth scrolling with Lenis
  * Description: Adds the Lenis library (by darkroom.engineering) to your WordPress page
- * Version:     1.5.0
+ * Version:     1.6.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Michael Gangolf
@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!defined('MIGA_SMOOTH_SCROLLING_LENIS_VERSION')) {
-    define('MIGA_SMOOTH_SCROLLING_LENIS_VERSION', '1.3.17');
+    define('MIGA_SMOOTH_SCROLLING_LENIS_VERSION', '1.3.18');
 }
 
 function miga_smooth_scrolling_enqueue_scripts()
@@ -78,17 +78,20 @@ function miga_smooth_scrolling_menu()
 
 function miga_smooth_scrolling_page_callback()
 {
+    if (!current_user_can('manage_options')) {
+        return;
+    }
     ?>
 <div class="wrap">
   <h1>Smooth Scrolling Settings</h1>
   <form method="post" action="options.php">
     <?php
-    settings_fields('miga_linis_option_group');
+    settings_fields('miga_lenis_option_group');
     do_settings_sections('miga_smooth_scrolling');
     submit_button();
     ?>
   </form>
-  <p>Plugin is using <a target="_blank" href="https://github.com/darkroomengineering/lenis">lenis <?php echo esc_attr(MIGA_SMOOTH_SCROLLING_LENIS_VERSION); ?></a> by <a target="_blank" href="https://github.com/darkroomengineering">darkroom.engineering</a></p>
+  <p>Plugin is using <a target="_blank" rel="noopener noreferrer" href="https://github.com/darkroomengineering/lenis">lenis <?php echo esc_attr(MIGA_SMOOTH_SCROLLING_LENIS_VERSION); ?></a> by <a target="_blank" rel="noopener noreferrer" href="https://github.com/darkroomengineering">darkroom.engineering</a></p>
 </div>
 <?php
 }
@@ -97,7 +100,7 @@ function miga_smooth_scrolling_fields()
 {
 
     $page_slug = 'miga_smooth_scrolling';
-    $option_group = 'miga_linis_option_group';
+    $option_group = 'miga_lenis_option_group';
 
     add_settings_section(
         'miga_smooth_scrolling_id',
@@ -107,11 +110,11 @@ function miga_smooth_scrolling_fields()
     );
 
     if ( get_option( 'miga_smooth_scrolling_gsap' ) === false )
-        update_option( 'miga_smooth_scrolling_gsap', 'no' );
+        update_option( 'miga_smooth_scrolling_gsap', 0 );
     if ( get_option( 'miga_smooth_scrolling_disable_wheel' ) === false )
-        update_option( 'miga_smooth_scrolling_disable_wheel', 'no' );
+        update_option( 'miga_smooth_scrolling_disable_wheel', 0 );
     if ( get_option( 'miga_smooth_scrolling_anchor_links' ) === false )
-        update_option( 'miga_smooth_scrolling_anchor_links', 'no' );
+        update_option( 'miga_smooth_scrolling_anchor_links', 0 );
 
     register_setting($option_group, 'miga_smooth_scrolling_disable_wheel', 'miga_smooth_scrolling_sanitize_checkbox');
     register_setting($option_group, 'miga_smooth_scrolling_exclude_page', 'miga_smooth_scrolling_sanitize_exclude_page');
@@ -240,7 +243,6 @@ function miga_smooth_scrolling_duration_callback($args)
 
 function miga_smooth_scrolling_exclude_page_callback()
 {
-
     $value = get_option('miga_smooth_scrolling_exclude_page', []);
     if ($value == "") {
         $value = [];
@@ -255,9 +257,7 @@ function miga_smooth_scrolling_exclude_page_callback()
             $option .= " selected ";
         }
 
-        $option .= '>';
-        $option .= $page->post_title;
-        $option .= '</option>';
+        $option .= '>' . esc_html($page->post_title) . '</option>';
         echo wp_kses($option, ['option' => ['value' => [], 'selected' => []]]);
     }
 
@@ -271,7 +271,10 @@ function miga_smooth_scrolling_sanitize_checkbox($value)
 
 function miga_smooth_scrolling_sanitize_exclude_page($value)
 {
-    return $value;
+    if (!is_array($value)) {
+        return [];
+    }
+    return array_map('absint', array_filter($value, 'is_numeric'));
 }
 function miga_smooth_scrolling_sanitize_value($value)
 {

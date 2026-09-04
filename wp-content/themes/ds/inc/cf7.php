@@ -49,7 +49,7 @@ add_filter('wpcf7_special_mail_tags', function ($output, $name, $html) {
     }
 
 	if ($name === 'event_date') {
-        return get_field("date", $event_id);
+        return get_field("date_thumbnail", $event_id);
     }
 
 	if ($name === 'event_place') {

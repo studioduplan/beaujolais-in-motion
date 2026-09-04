@@ -9,11 +9,27 @@ form {
         &-full {
           @apply block;
         }
+
+        &-submit {
+          @apply flex justify-center;
+        }
+      }
+    }
+
+    .legend {
+      @apply relative -mt-6 mb-4 text-[#B11424] font-normal;
+
+      sup {
+        @apply text-base top-auto underline;
       }
     }
 
     label {
       @apply block font-bold mb-4;
+
+      &.custom-acceptance {
+        @apply underline;
+      }
 
       sup {
         @apply text-[#B11424] ml-1;
@@ -33,7 +49,9 @@ form {
     }
 
     .wpcf7-checkbox {
-      @apply grid grid-cols-2 gap-x-4 gap-y-2;
+      &-mini-cols {
+      }
+      @apply grid gap-y-2;
     }
 
     [data-name="checkbox-allergies"] .wpcf7-checkbox {

@@ -3,7 +3,7 @@
     @apply bg-primary pt-28 pb-6 lg:pt-40 lg:pb-20 text-white;
 
     &-wrapper {
-      @apply relative flex flex-col lg:flex-row items-center justify-between gap-y-6 lg:gap-y-0 lg:gap-x-24 before:bg-[url('/images/deco-1.svg')] before:bg-no-repeat before:absolute before:left-0 before:top-0 before:w-[87px] before:h-[85px] before:z-0 after:bg-[url('/images/deco-2.svg')] after:right-0 after:bottom-0 after:bg-no-repeat after:absolute after:w-[87px] after:h-[85px] after:z-0 p-6 lg:p-12 w-full;
+      @apply relative flex flex-col lg:flex-row items-center justify-between gap-y-6 lg:gap-y-0 lg:gap-x-12 before:bg-[url('/images/deco-1.svg')] before:bg-no-repeat before:absolute before:left-0 before:top-0 before:w-[87px] before:h-[85px] before:z-0 after:bg-[url('/images/deco-2.svg')] after:right-0 after:bottom-0 after:bg-no-repeat after:absolute after:w-[87px] after:h-[85px] after:z-0 p-6 lg:p-12 w-full;
     }
 
     &-thumbnails {

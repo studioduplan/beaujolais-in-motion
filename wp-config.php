@@ -88,18 +88,7 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 
-define('WP_DEBUG', false);
-define('WP_DEBUG_DISPLAY', false);
-define('WP_DEBUG_LOG', false);
 
-define('WP_POST_REVISIONS', false);
-define('AUTOSAVE_INTERVAL', 300);
-define('EMPTY_TRASH_DAYS', 30);
-define('WP_MEMORY_LIMIT', '256M');
-define('WP_MAX_MEMORY_LIMIT', '256M');
-define('DISALLOW_FILE_EDIT', true);
-define('WP_AUTO_UPDATE_CORE', false);
-define('WP_ALLOW_REPAIR', true);
 
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
 /* That's all, stop editing! Happy publishing. */

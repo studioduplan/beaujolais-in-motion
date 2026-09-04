@@ -4,7 +4,7 @@ Tags: lenis, scroll, smooth, scrolling
 Donate link: https://www.buymeacoffee.com/miga
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 1.5.0
+Stable tag: 1.6.0
 Requires PHP: 7.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
@@ -17,7 +17,7 @@ Adds the Lenis library (by darkroom.engineering) to your WordPress page. Simply 
 
 You can use a function 'smoothScrollLenisCallback(event)' in your custom code that will be called by the Lenis scroll event.
 
-Note: if you have popup with scrolling content you'll need to this attribute `data-lenis-prevent` to the popup.
+Note: if you have popup with scrolling content you'll need to add this attribute `data-lenis-prevent` to the popup.
 
 Credits:
 - Lenis library: https://github.com/darkroomengineering
@@ -28,6 +28,10 @@ Credits:
 * Some settings are under "Settings - Lenis"
 
 == Changelog ==
+
+1.6.0
+* update lenis to 1.3.18
+* minor code improvements
 
 1.5.0
 * update lenis to 1.3.17
